@@ -18,14 +18,15 @@ public class Main {
         System.out.println(" start = " + start);
         System.out.println("\n bạn chọn: " + input);
         input = scanner.nextInt();
+        System.out.println(" ban chon " + input);
         long end = System.currentTimeMillis();
         System.out.println(" \nend time : " + end);
-        System.out.println(" time 1000 - 3000 : 1s - 3s");
+        System.out.println(" time 1000 - 3000 : 1s - 4s || > 4s");
         long equalsTime = end - start;
 
         start = System.currentTimeMillis();
         try {
-            Thread.sleep(input);
+            Thread.sleep(1000);// thử thay input xem
         }catch (Exception ex){
             System.out.println(ex);
         }
@@ -37,7 +38,17 @@ public class Main {
         System.out.println(" \ntime has passed  = " + equalsTime);
 
 
-        System.out.println(" chưa tìm được công thức chuyển đổi sang s p h");
+        System.out.println("  công thức chuyển đổi sang s p h");
+
+        // check time thuc
+        long stopTime = (equalsTime/1000)%60;
+        System.out.println(" delay  : " + stopTime + "s");
+
+//        int seconds = (int) (milliseconds / 1000) % 60 ;
+//        int minutes = (int) ((milliseconds / (1000*60)) % 60);
+//        int hours   = (int) ((milliseconds / (1000*60*60)) % 24);
+//etc...
+
 
     }
 }
